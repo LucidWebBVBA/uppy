@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 import GeneratedLocale = require('./generatedLocale')
 
 declare module StatusBar {

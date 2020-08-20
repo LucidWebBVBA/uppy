@@ -1,7 +1,7 @@
-const Translator = require('@uppy/utils/lib/Translator')
-const hasProperty = require('@uppy/utils/lib/hasProperty')
-const { Plugin } = require('@uppy/core')
-const Tus = require('@uppy/tus')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
+const hasProperty = require('@lucidweb/uppy-utils/lib/hasProperty')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Tus = require('@lucidweb/uppy-tus')
 const Assembly = require('./Assembly')
 const Client = require('./Client')
 const AssemblyOptions = require('./AssemblyOptions')
@@ -793,7 +793,7 @@ module.exports = class Transloadit extends Plugin {
         useFastRemoteRetry: false,
         // Only send Assembly metadata to the tus endpoint.
         metaFields: ['assembly_url', 'filename', 'fieldname'],
-        // Pass the limit option to @uppy/tus
+        // Pass the limit option to @lucidweb/uppy-tus
         limit: this.opts.limit
       })
     }

@@ -1,4 +1,4 @@
-import UppyCore = require('@uppy/core');
+import UppyCore = require('@lucidweb/uppy-core');
 
 export type Uppy = UppyCore.Uppy
 export type Locale = UppyCore.Locale

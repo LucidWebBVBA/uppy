@@ -2,7 +2,7 @@ const throttle = require('lodash.throttle')
 const classNames = require('classnames')
 const statusBarStates = require('./StatusBarStates')
 const prettierBytes = require('@transloadit/prettier-bytes')
-const prettyETA = require('@uppy/utils/lib/prettyETA')
+const prettyETA = require('@lucidweb/uppy-utils/lib/prettyETA')
 const { h } = require('preact')
 
 function calculateProcessingProgress (files) {

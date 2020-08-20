@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 
 declare module Form {
   interface FormOptions extends Uppy.PluginOptions {

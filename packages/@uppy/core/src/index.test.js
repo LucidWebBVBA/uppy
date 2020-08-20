@@ -12,7 +12,7 @@ const InvalidPluginWithoutType = require('../../../../test/mocks/invalidPluginWi
 jest.mock('cuid', () => {
   return () => 'cjd09qwxb000dlql4tp4doz8h'
 })
-jest.mock('@uppy/utils/lib/findDOMElement', () => {
+jest.mock('@lucidweb/uppy-utils/lib/findDOMElement', () => {
   return () => null
 })
 

@@ -1,5 +1,5 @@
-const Transloadit = require('@uppy/transloadit')
-const has = require('@uppy/utils/lib/hasProperty')
+const Transloadit = require('@lucidweb/uppy-transloadit')
+const has = require('@lucidweb/uppy-utils/lib/hasProperty')
 const TransloaditResults = require('./TransloaditResultsPlugin')
 
 const transloaditOptionNames = [

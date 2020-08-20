@@ -1,8 +1,8 @@
-# @uppy/dashboard
+# @lucidweb/uppy-dashboard
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/dashboard"><img src="https://img.shields.io/npm/v/@uppy/dashboard.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-dashboard"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-dashboard.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Dashboard is a universal UI plugin for Uppy:
@@ -21,8 +21,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const Dashboard = require('@uppy/dashboard')
+const Uppy = require('@lucidweb/uppy-core')
+const Dashboard = require('@lucidweb/uppy-dashboard')
 
 const uppy = new Uppy()
 uppy.use(Dashboard, {
@@ -34,7 +34,7 @@ uppy.use(Dashboard, {
 ## Installation
 
 ```bash
-$ npm install @uppy/dashboard --save
+$ npm install @lucidweb/uppy-dashboard --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

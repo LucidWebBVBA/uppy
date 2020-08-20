@@ -1,6 +1,6 @@
 import { expectError, expectType } from 'tsd'
 import Uppy = require('../')
-import DefaultStore = require('@uppy/store-default')
+import DefaultStore = require('@lucidweb/uppy-store-default')
 
 {
   const uppy = Uppy<Uppy.StrictTypes>()

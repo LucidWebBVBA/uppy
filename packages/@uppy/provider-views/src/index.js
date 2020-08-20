@@ -2,9 +2,9 @@ const { h, Component } = require('preact')
 const AuthView = require('./AuthView')
 const Browser = require('./Browser')
 const LoaderView = require('./Loader')
-const generateFileID = require('@uppy/utils/lib/generateFileID')
-const getFileType = require('@uppy/utils/lib/getFileType')
-const isPreviewSupported = require('@uppy/utils/lib/isPreviewSupported')
+const generateFileID = require('@lucidweb/uppy-utils/lib/generateFileID')
+const getFileType = require('@lucidweb/uppy-utils/lib/getFileType')
+const isPreviewSupported = require('@lucidweb/uppy-utils/lib/isPreviewSupported')
 
 /**
  * Array.prototype.findIndex ponyfill for old browsers.
@@ -450,7 +450,7 @@ module.exports = class ProviderView {
 
   handleAuth () {
     const authState = btoa(JSON.stringify({ origin: getOrigin() }))
-    const clientVersion = encodeURIComponent(`@uppy/provider-views=${ProviderView.VERSION}`)
+    const clientVersion = encodeURIComponent(`@lucidweb/uppy-provider-views=${ProviderView.VERSION}`)
     const link = `${this.provider.authUrl()}?state=${authState}&uppyVersions=${clientVersion}`
 
     const authWindow = window.open(link, '_blank')

@@ -12,11 +12,11 @@ jest.mock('../../src/server/helpers/oauth-state', () => {
       }
 
       if (state === 'state-with-older-version' && key === 'clientVersion') {
-        return '@uppy/companion-client=1.0.1'
+        return '@lucidweb/uppy-companion-client=1.0.1'
       }
 
       if (state === 'state-with-newer-version' && key === 'clientVersion') {
-        return '@uppy/companion-client=1.0.3'
+        return '@lucidweb/uppy-companion-client=1.0.3'
       }
 
       if (state === 'state-with-newer-version-old-style' && key === 'clientVersion') {

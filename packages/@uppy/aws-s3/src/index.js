@@ -27,11 +27,11 @@
 
 // If global `URL` constructor is available, use it
 const URL_ = typeof URL === 'function' ? URL : require('url-parse')
-const { Plugin } = require('@uppy/core')
-const RateLimitedQueue = require('@uppy/utils/lib/RateLimitedQueue')
-const settle = require('@uppy/utils/lib/settle')
-const hasProperty = require('@uppy/utils/lib/hasProperty')
-const { RequestClient } = require('@uppy/companion-client')
+const { Plugin } = require('@lucidweb/uppy-core')
+const RateLimitedQueue = require('@lucidweb/uppy-utils/lib/RateLimitedQueue')
+const settle = require('@lucidweb/uppy-utils/lib/settle')
+const hasProperty = require('@lucidweb/uppy-utils/lib/hasProperty')
+const { RequestClient } = require('@lucidweb/uppy-companion-client')
 const qsStringify = require('qs-stringify')
 const MiniXHRUpload = require('./MiniXHRUpload')
 const isXml = require('./isXml')

@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/aws-s3-multipart",
+  "name": "@lucidweb/uppy-aws-s3-multipart",
   "description": "Upload to Amazon S3 with Uppy and S3's Multipart upload strategy",
   "version": "1.8.5",
   "license": "MIT",
@@ -23,10 +23,10 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/companion-client": "file:../companion-client",
-    "@uppy/utils": "file:../utils"
+    "@lucidweb/uppy-companion-client": "file:../companion-client",
+    "@lucidweb/uppy-utils": "file:../utils"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

@@ -1,8 +1,8 @@
-# @uppy/thumbnail-generator
+# @lucidweb/uppy-thumbnail-generator
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/thumbnail-generator"><img src="https://img.shields.io/npm/v/@uppy/thumbnail-generator.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-thumbnail-generator"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-thumbnail-generator.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Uppy plugin that generates small previews of images to show on your upload UI.
@@ -12,8 +12,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const ThumbnailGenerator = require('@uppy/thumbnail-generator')
+const Uppy = require('@lucidweb/uppy-core')
+const ThumbnailGenerator = require('@lucidweb/uppy-thumbnail-generator')
 
 const uppy = new Uppy()
 uppy.use(ThumbnailGenerator, {
@@ -24,7 +24,7 @@ uppy.use(ThumbnailGenerator, {
 ## Installation
 
 ```bash
-$ npm install @uppy/thumbnail-generator --save
+$ npm install @lucidweb/uppy-thumbnail-generator --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

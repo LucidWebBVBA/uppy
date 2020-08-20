@@ -1,8 +1,8 @@
-# @uppy/golden-retriever
+# @lucidweb/uppy-golden-retriever
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/golden-retriever"><img src="https://img.shields.io/npm/v/@uppy/golden-retriever.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-golden-retriever"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-golden-retriever.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 The GoldenRetriever plugin saves selected files in your browser cache (Local Storage for metadata, then Service Worker for all blobs + IndexedDB for small blobs), so that if the browser crashes, Uppy can restore everything and continue uploading like nothing happened. Read more about it [on the blog](https://uppy.io/blog/2017/07/golden-retriever/).
@@ -12,8 +12,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const GoldenRetriever = require('@uppy/golden-retriever')
+const Uppy = require('@lucidweb/uppy-core')
+const GoldenRetriever = require('@lucidweb/uppy-golden-retriever')
 
 const uppy = new Uppy()
 uppy.use(GoldenRetriever, {
@@ -24,7 +24,7 @@ uppy.use(GoldenRetriever, {
 ## Installation
 
 ```bash
-$ npm install @uppy/golden-retriever --save
+$ npm install @lucidweb/uppy-golden-retriever --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

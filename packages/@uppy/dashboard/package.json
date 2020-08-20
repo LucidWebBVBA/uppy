@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/dashboard",
+  "name": "@lucidweb/uppy-dashboard",
   "description": "Universal UI plugin for Uppy.",
   "version": "1.12.5",
   "license": "MIT",
@@ -23,11 +23,11 @@
   },
   "dependencies": {
     "@transloadit/prettier-bytes": "0.0.7",
-    "@uppy/informer": "file:../informer",
-    "@uppy/provider-views": "file:../provider-views",
-    "@uppy/status-bar": "file:../status-bar",
-    "@uppy/thumbnail-generator": "file:../thumbnail-generator",
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-informer": "file:../informer",
+    "@lucidweb/uppy-provider-views": "file:../provider-views",
+    "@lucidweb/uppy-status-bar": "file:../status-bar",
+    "@lucidweb/uppy-thumbnail-generator": "file:../thumbnail-generator",
+    "@lucidweb/uppy-utils": "file:../utils",
     "classnames": "^2.2.6",
     "cuid": "^2.1.1",
     "is-shallow-equal": "^1.0.1",
@@ -39,6 +39,6 @@
     "resize-observer-polyfill": "^1.5.0"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

@@ -1,6 +1,6 @@
-const { Plugin } = require('@uppy/core')
-const toArray = require('@uppy/utils/lib/toArray')
-const findDOMElement = require('@uppy/utils/lib/findDOMElement')
+const { Plugin } = require('@lucidweb/uppy-core')
+const toArray = require('@lucidweb/uppy-utils/lib/toArray')
+const findDOMElement = require('@lucidweb/uppy-utils/lib/findDOMElement')
 
 /**
  * Add files from existing file inputs to Uppy.

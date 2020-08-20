@@ -1,7 +1,7 @@
 const { h } = require('preact')
-const { Plugin } = require('@uppy/core')
-const Translator = require('@uppy/utils/lib/Translator')
-const getFileTypeExtension = require('@uppy/utils/lib/getFileTypeExtension')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
+const getFileTypeExtension = require('@lucidweb/uppy-utils/lib/getFileTypeExtension')
 const ScreenRecIcon = require('./ScreenRecIcon')
 const CaptureScreen = require('./CaptureScreen')
 

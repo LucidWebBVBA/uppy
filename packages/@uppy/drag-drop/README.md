@@ -1,8 +1,8 @@
-# @uppy/drag-drop
+# @lucidweb/uppy-drag-drop
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/drag-drop"><img src="https://img.shields.io/npm/v/@uppy/drag-drop.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-drag-drop"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-drag-drop.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Droppable zone UI for Uppy. Drag and drop files into it to upload.
@@ -14,8 +14,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const DragDrop = require('@uppy/drag-drop')
+const Uppy = require('@lucidweb/uppy-core')
+const DragDrop = require('@lucidweb/uppy-drag-drop')
 
 const uppy = new Uppy()
 uppy.use(DragDrop, {
@@ -26,7 +26,7 @@ uppy.use(DragDrop, {
 ## Installation
 
 ```bash
-$ npm install @uppy/drag-drop --save
+$ npm install @lucidweb/uppy-drag-drop --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

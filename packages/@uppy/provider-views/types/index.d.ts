@@ -1,5 +1,5 @@
-import CompanionClient = require('@uppy/companion-client')
-import Uppy = require('@uppy/core')
+import CompanionClient = require('@lucidweb/uppy-companion-client')
+import Uppy = require('@lucidweb/uppy-core')
 
 interface ProviderViewOptions {
     provider: CompanionClient.Provider

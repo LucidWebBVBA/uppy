@@ -1,4 +1,4 @@
-import UppyUtils = require('@uppy/utils')
+import UppyUtils = require('@lucidweb/uppy-utils')
 import { Reducer, Middleware, Store as Redux } from 'redux'
 
 declare namespace ReduxStore {

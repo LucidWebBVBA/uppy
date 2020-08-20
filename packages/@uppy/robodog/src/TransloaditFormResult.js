@@ -1,5 +1,5 @@
-const { Plugin } = require('@uppy/core')
-const findDOMElement = require('@uppy/utils/lib/findDOMElement')
+const { Plugin } = require('@lucidweb/uppy-core')
+const findDOMElement = require('@lucidweb/uppy-utils/lib/findDOMElement')
 
 /**
  * After an upload completes, inject result data from Transloadit in a hidden input.

@@ -3,61 +3,61 @@
 // Definitions by: taoqf <https://github.com/taoqf>
 
 // Core
-import Core = require('@uppy/core');
+import Core = require('@lucidweb/uppy-core');
 export { Core };
 
 // Stores
-import DefaultStore = require('@uppy/store-default');
+import DefaultStore = require('@lucidweb/uppy-store-default');
 export { DefaultStore };
-import ReduxStore = require('@uppy/store-redux');
+import ReduxStore = require('@lucidweb/uppy-store-redux');
 export { ReduxStore };
 
 // UI plugins
-import Dashboard = require('@uppy/dashboard');
+import Dashboard = require('@lucidweb/uppy-dashboard');
 export { Dashboard };
-import DragDrop = require('@uppy/drag-drop');
+import DragDrop = require('@lucidweb/uppy-drag-drop');
 export { DragDrop };
-import FileInput = require('@uppy/file-input');
+import FileInput = require('@lucidweb/uppy-file-input');
 export { FileInput };
-import Informer = require('@uppy/informer');
+import Informer = require('@lucidweb/uppy-informer');
 export { Informer };
-import ProgressBar = require('@uppy/progress-bar');
+import ProgressBar = require('@lucidweb/uppy-progress-bar');
 export { ProgressBar };
-import StatusBar = require('@uppy/status-bar');
+import StatusBar = require('@lucidweb/uppy-status-bar');
 export { StatusBar };
 
 // Acquirers
-import Dropbox = require('@uppy/dropbox');
+import Dropbox = require('@lucidweb/uppy-dropbox');
 export { Dropbox };
-import GoogleDrive = require('@uppy/google-drive');
+import GoogleDrive = require('@lucidweb/uppy-google-drive');
 export { GoogleDrive };
-import Instagram = require('@uppy/instagram');
+import Instagram = require('@lucidweb/uppy-instagram');
 export { Instagram };
-import Url = require('@uppy/url');
+import Url = require('@lucidweb/uppy-url');
 export { Url };
-import Webcam = require('@uppy/webcam');
+import Webcam = require('@lucidweb/uppy-webcam');
 export { Webcam };
-import ScreenCapture = require('@uppy/screen-capture');
+import ScreenCapture = require('@lucidweb/uppy-screen-capture');
 export { ScreenCapture };
 
 // Uploaders
-import AwsS3 = require('@uppy/aws-s3');
+import AwsS3 = require('@lucidweb/uppy-aws-s3');
 export { AwsS3 };
-import AwsS3Multipart = require('@uppy/aws-s3-multipart');
+import AwsS3Multipart = require('@lucidweb/uppy-aws-s3-multipart');
 export { AwsS3Multipart };
-import Transloadit = require('@uppy/transloadit');
+import Transloadit = require('@lucidweb/uppy-transloadit');
 export { Transloadit };
-import Tus = require('@uppy/tus');
+import Tus = require('@lucidweb/uppy-tus');
 export { Tus };
-import XHRUpload = require('@uppy/xhr-upload');
+import XHRUpload = require('@lucidweb/uppy-xhr-upload');
 export { XHRUpload };
 
 // Miscellaneous
-import Form = require('@uppy/form');
+import Form = require('@lucidweb/uppy-form');
 export { Form };
-import GoldenRetriever = require('@uppy/golden-retriever');
+import GoldenRetriever = require('@lucidweb/uppy-golden-retriever');
 export { GoldenRetriever };
-import ReduxDevTools = require('@uppy/redux-dev-tools');
+import ReduxDevTools = require('@lucidweb/uppy-redux-dev-tools');
 export { ReduxDevTools };
-import ThumbnailGenerator = require('@uppy/thumbnail-generator');
+import ThumbnailGenerator = require('@lucidweb/uppy-thumbnail-generator');
 export { ThumbnailGenerator };

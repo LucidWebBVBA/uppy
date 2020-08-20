@@ -1,4 +1,4 @@
-const { Plugin } = require('@uppy/core')
+const { Plugin } = require('@lucidweb/uppy-core')
 
 /**
  * Add a `results` key to the upload result data, containing all Transloadit Assembly results.

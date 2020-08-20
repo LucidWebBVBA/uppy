@@ -1,7 +1,7 @@
 'use strict'
 
 const AuthError = require('./AuthError')
-const fetchWithNetworkError = require('@uppy/utils/lib/fetchWithNetworkError')
+const fetchWithNetworkError = require('@lucidweb/uppy-utils/lib/fetchWithNetworkError')
 
 // Remove the trailing slash so we can always safely append /xyz.
 function stripSlash (url) {
@@ -29,7 +29,7 @@ module.exports = class RequestClient {
     return {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      'Uppy-Versions': `@uppy/companion-client=${RequestClient.VERSION}`
+      'Uppy-Versions': `@lucidweb/uppy-companion-client=${RequestClient.VERSION}`
     }
   }
 

@@ -1,5 +1,5 @@
 const React = require('react')
-const DragDropPlugin = require('@uppy/drag-drop')
+const DragDropPlugin = require('@lucidweb/uppy-drag-drop')
 const propTypes = require('./propTypes')
 
 const h = React.createElement

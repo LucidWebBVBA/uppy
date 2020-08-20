@@ -1,8 +1,8 @@
-const { Plugin } = require('@uppy/core')
-const Translator = require('@uppy/utils/lib/Translator')
-const dataURItoBlob = require('@uppy/utils/lib/dataURItoBlob')
-const isObjectURL = require('@uppy/utils/lib/isObjectURL')
-const isPreviewSupported = require('@uppy/utils/lib/isPreviewSupported')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
+const dataURItoBlob = require('@lucidweb/uppy-utils/lib/dataURItoBlob')
+const isObjectURL = require('@lucidweb/uppy-utils/lib/isObjectURL')
+const isPreviewSupported = require('@lucidweb/uppy-utils/lib/isPreviewSupported')
 const MathLog2 = require('math-log2') // Polyfill for IE.
 const exifr = require('exifr/dist/mini.legacy.umd.js')
 

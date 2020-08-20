@@ -12,10 +12,10 @@ Instagram, etc. **Companion is not a target to upload files to**. For this, use 
 ## Install
 
 ```bash
-npm install @uppy/companion
+npm install @lucidweb/uppy-companion
 ```
 
-If you don't have a Node.js project with a `package.json` you might want to install/run Companion globally like so: `[sudo] npm install -g @uppy/companion@1.x` (best check the actual latest version, and use that, so (re)installs are reproducible, and upgrades intentional).
+If you don't have a Node.js project with a `package.json` you might want to install/run Companion globally like so: `[sudo] npm install -g @lucidweb/uppy-companion@1.x` (best check the actual latest version, and use that, so (re)installs are reproducible, and upgrades intentional).
 
 ## Usage
 
@@ -28,7 +28,7 @@ companion may either be used as pluggable express app, which you plug to your al
 var express = require('express')
 var bodyParser = require('body-parser')
 var session = require('express-session')
-var companion = require('@uppy/companion')
+var companion = require('@lucidweb/uppy-companion')
 
 var app = express()
 app.use(bodyParser.json())
@@ -94,7 +94,7 @@ echo '{
     "start": "companion"
   },
   "dependencies": {
-    "@uppy/companion": "^1.13.1"
+    "@lucidweb/uppy-companion": "^1.13.1"
   }
 }' > package.json
 

@@ -1,7 +1,7 @@
-const Core = require('@uppy/core')
+const Core = require('@lucidweb/uppy-core')
 const DashboardPlugin = require('./index')
-const StatusBarPlugin = require('@uppy/status-bar')
-const GoogleDrivePlugin = require('@uppy/google-drive')
+const StatusBarPlugin = require('@lucidweb/uppy-status-bar')
+const GoogleDrivePlugin = require('@lucidweb/uppy-google-drive')
 
 describe('Dashboard', () => {
   it('can safely be added together with the StatusBar without id conflicts', () => {

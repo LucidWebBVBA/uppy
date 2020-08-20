@@ -1,8 +1,8 @@
-# @uppy/aws-s3-multipart
+# @lucidweb/uppy-aws-s3-multipart
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/aws-s3-multipart"><img src="https://img.shields.io/npm/v/@uppy/aws-s3-multipart.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-aws-s3-multipart"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-aws-s3-multipart.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 The AwsS3Multipart plugin can be used to upload files directly to an S3 bucket using S3’s Multipart upload strategy. With this strategy, files are chopped up in parts of 5MB+ each, so they can be uploaded concurrently. It’s also very reliable: if a single part fails to upload, only that 5MB has to be retried.
@@ -12,8 +12,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const AwsS3Multipart = require('@uppy/aws-s3-multipart')
+const Uppy = require('@lucidweb/uppy-core')
+const AwsS3Multipart = require('@lucidweb/uppy-aws-s3-multipart')
 
 const uppy = new Uppy()
 uppy.use(AwsS3Multipart, {
@@ -25,7 +25,7 @@ uppy.use(AwsS3Multipart, {
 ## Installation
 
 ```bash
-$ npm install @uppy/aws-s3-multipart --save
+$ npm install @lucidweb/uppy-aws-s3-multipart --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

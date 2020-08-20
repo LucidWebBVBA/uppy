@@ -1,8 +1,8 @@
-# @uppy/image-editor
+# @lucidweb/uppy-image-editor
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/image-editor"><img src="https://img.shields.io/npm/v/@uppy/image-editor.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-image-editor"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-image-editor.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Image Editor is an image cropping and editing plugin for Uppy. Designed to be used with the Dashboard UI (can in theory work without it).
@@ -16,9 +16,9 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const Dashboard = require('@uppy/dashboard')
-const ImageEditor = require('@uppy/image-editor')
+const Uppy = require('@lucidweb/uppy-core')
+const Dashboard = require('@lucidweb/uppy-dashboard')
+const ImageEditor = require('@lucidweb/uppy-image-editor')
 
 const uppy = Uppy()
 uppy.use(Dashboard)
@@ -31,7 +31,7 @@ uppy.use(ImageEditor, {
 ## Installation
 
 ```bash
-$ npm install @uppy/image-editor --save
+$ npm install @lucidweb/uppy-image-editor --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

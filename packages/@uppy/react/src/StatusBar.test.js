@@ -1,13 +1,13 @@
 const h = require('react').createElement
 const { mount, configure } = require('enzyme')
 const ReactAdapter = require('enzyme-adapter-react-16')
-const Uppy = require('@uppy/core')
+const Uppy = require('@lucidweb/uppy-core')
 
 beforeAll(() => {
   configure({ adapter: new ReactAdapter() })
 })
 
-jest.mock('@uppy/status-bar', () => require('./__mocks__/StatusBarPlugin'))
+jest.mock('@lucidweb/uppy-status-bar', () => require('./__mocks__/StatusBarPlugin'))
 
 const StatusBar = require('./StatusBar')
 

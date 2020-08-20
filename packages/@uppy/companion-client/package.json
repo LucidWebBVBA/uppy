@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/companion-client",
+  "name": "@lucidweb/uppy-companion-client",
   "description": "Client library for communication with Companion. Intended for use in Uppy plugins.",
   "version": "1.5.3",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-utils": "file:../utils",
     "namespace-emitter": "^2.0.1"
   }
 }

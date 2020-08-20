@@ -1,5 +1,5 @@
-import Uppy = require('@uppy/core')
-import CompanionClient = require('@uppy/companion-client')
+import Uppy = require('@lucidweb/uppy-core')
+import CompanionClient = require('@lucidweb/uppy-companion-client')
 
 declare module OneDrive {
   interface OneDriveOptions

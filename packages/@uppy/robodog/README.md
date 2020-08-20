@@ -1,8 +1,8 @@
-# @uppy/robodog
+# @lucidweb/uppy-robodog
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/robodog"><img src="https://img.shields.io/npm/v/@uppy/robodog.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-robodog"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-robodog.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Robodog is an Uppy-based library that pulls your files through Transloadit for all kinds of processing, such as transcoding video, resizing images, zipping/unzipping, [and more](https://transloadit.com/services/).
@@ -10,7 +10,7 @@ Robodog is an Uppy-based library that pulls your files through Transloadit for a
 ## Installation
 
 ```bash
-$ npm install @uppy/robodog --save
+$ npm install @lucidweb/uppy-robodog --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](http://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

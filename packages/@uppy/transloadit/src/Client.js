@@ -1,4 +1,4 @@
-const fetchWithNetworkError = require('@uppy/utils/lib/fetchWithNetworkError')
+const fetchWithNetworkError = require('@lucidweb/uppy-utils/lib/fetchWithNetworkError')
 
 /**
  * A Barebones HTTP API client for Transloadit.

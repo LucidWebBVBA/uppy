@@ -1,8 +1,8 @@
-const { Plugin } = require('@uppy/core')
-const Translator = require('@uppy/utils/lib/Translator')
-const toArray = require('@uppy/utils/lib/toArray')
-const isDragDropSupported = require('@uppy/utils/lib/isDragDropSupported')
-const getDroppedFiles = require('@uppy/utils/lib/getDroppedFiles')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
+const toArray = require('@lucidweb/uppy-utils/lib/toArray')
+const isDragDropSupported = require('@lucidweb/uppy-utils/lib/isDragDropSupported')
+const getDroppedFiles = require('@lucidweb/uppy-utils/lib/getDroppedFiles')
 const { h } = require('preact')
 
 /**

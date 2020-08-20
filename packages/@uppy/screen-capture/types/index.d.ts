@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core');
+import Uppy = require('@lucidweb/uppy-core');
 
 declare module ScreenCapture {
   // https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#Properties_of_shared_screen_tracks

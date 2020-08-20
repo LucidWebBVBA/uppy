@@ -1,4 +1,4 @@
-const Uppy = require('@uppy/core')
+const Uppy = require('@lucidweb/uppy-core')
 const Webcam = require('./index')
 
 describe('Webcam', () => {

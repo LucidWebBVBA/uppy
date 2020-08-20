@@ -1,6 +1,6 @@
-const { Plugin } = require('@uppy/core')
-const toArray = require('@uppy/utils/lib/toArray')
-const Translator = require('@uppy/utils/lib/Translator')
+const { Plugin } = require('@lucidweb/uppy-core')
+const toArray = require('@lucidweb/uppy-utils/lib/toArray')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
 const { h } = require('preact')
 
 module.exports = class FileInput extends Plugin {
@@ -14,7 +14,7 @@ module.exports = class FileInput extends Plugin {
 
     this.defaultLocale = {
       strings: {
-        // The same key is used for the same purpose by @uppy/robodog's `form()` API, but our
+        // The same key is used for the same purpose by @lucidweb/uppy-robodog's `form()` API, but our
         // locale pack scripts can't access it in Robodog. If it is updated here, it should
         // also be updated there!
         chooseFiles: 'Choose files'

@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/store-redux",
+  "name": "@lucidweb/uppy-store-redux",
   "description": "Make Uppy use your existing Redux store.",
   "version": "1.2.3",
   "license": "MIT",

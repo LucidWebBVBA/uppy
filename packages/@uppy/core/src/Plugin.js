@@ -1,5 +1,5 @@
 const preact = require('preact')
-const findDOMElement = require('@uppy/utils/lib/findDOMElement')
+const findDOMElement = require('@lucidweb/uppy-utils/lib/findDOMElement')
 
 /**
  * Defer a frequent call to the microtask queue.
@@ -86,7 +86,7 @@ module.exports = class Plugin {
    * Called when plugin is mounted, whether in DOM or into another plugin.
    * Needed because sometimes plugins are mounted separately/after `install`,
    * so this.el and this.parent might not be available in `install`.
-   * This is the case with @uppy/react plugins, for example.
+   * This is the case with @lucidweb/uppy-react plugins, for example.
    */
   onMount () {
 
@@ -163,8 +163,8 @@ module.exports = class Plugin {
     if (typeof target === 'function') {
       message += ' The given target is not a Plugin class. ' +
         'Please check that you\'re not specifying a React Component instead of a plugin. ' +
-        'If you are using @uppy/* packages directly, make sure you have only 1 version of @uppy/core installed: ' +
-        'run `npm ls @uppy/core` on the command line and verify that all the versions match and are deduped correctly.'
+        'If you are using @lucidweb/uppy-* packages directly, make sure you have only 1 version of @lucidweb/uppy-core installed: ' +
+        'run `npm ls @lucidweb/uppy-core` on the command line and verify that all the versions match and are deduped correctly.'
     } else {
       message += 'If you meant to target an HTML element, please make sure that the element exists. ' +
         'Check that the <script> tag initializing Uppy is right before the closing </body> tag at the end of the page. ' +

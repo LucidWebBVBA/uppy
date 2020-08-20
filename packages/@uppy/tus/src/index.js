@@ -1,21 +1,21 @@
-const { Plugin } = require('@uppy/core')
+const { Plugin } = require('@lucidweb/uppy-core')
 const tus = require('tus-js-client')
-const { Provider, RequestClient, Socket } = require('@uppy/companion-client')
-const emitSocketProgress = require('@uppy/utils/lib/emitSocketProgress')
-const getSocketHost = require('@uppy/utils/lib/getSocketHost')
-const settle = require('@uppy/utils/lib/settle')
-const EventTracker = require('@uppy/utils/lib/EventTracker')
-const NetworkError = require('@uppy/utils/lib/NetworkError')
-const isNetworkError = require('@uppy/utils/lib/isNetworkError')
-const RateLimitedQueue = require('@uppy/utils/lib/RateLimitedQueue')
-const hasProperty = require('@uppy/utils/lib/hasProperty')
+const { Provider, RequestClient, Socket } = require('@lucidweb/uppy-companion-client')
+const emitSocketProgress = require('@lucidweb/uppy-utils/lib/emitSocketProgress')
+const getSocketHost = require('@lucidweb/uppy-utils/lib/getSocketHost')
+const settle = require('@lucidweb/uppy-utils/lib/settle')
+const EventTracker = require('@lucidweb/uppy-utils/lib/EventTracker')
+const NetworkError = require('@lucidweb/uppy-utils/lib/NetworkError')
+const isNetworkError = require('@lucidweb/uppy-utils/lib/isNetworkError')
+const RateLimitedQueue = require('@lucidweb/uppy-utils/lib/RateLimitedQueue')
+const hasProperty = require('@lucidweb/uppy-utils/lib/hasProperty')
 const getFingerprint = require('./getFingerprint')
 
 /** @typedef {import('..').TusOptions} TusOptions */
 /** @typedef {import('tus-js-client').UploadOptions} RawTusOptions */
-/** @typedef {import('@uppy/core').Uppy} Uppy */
-/** @typedef {import('@uppy/core').UppyFile} UppyFile */
-/** @typedef {import('@uppy/core').FailedUppyFile<{}>} FailedUppyFile */
+/** @typedef {import('@lucidweb/uppy-core').Uppy} Uppy */
+/** @typedef {import('@lucidweb/uppy-core').UppyFile} UppyFile */
+/** @typedef {import('@lucidweb/uppy-core').FailedUppyFile<{}>} FailedUppyFile */
 
 /**
  * Extracted from https://github.com/tus/tus-js-client/blob/master/lib/upload.js#L13
@@ -187,7 +187,7 @@ module.exports = class Tus extends Plugin {
       delete uploadOptions.resume
 
       // Make `resume: true` work like it did in tus-js-client v1.
-      // TODO: Remove in @uppy/tus v2
+      // TODO: Remove in @lucidweb/uppy-tus v2
       if (opts.resume) {
         uploadOptions.storeFingerprintForResuming = true
       }
@@ -267,7 +267,7 @@ module.exports = class Tus extends Plugin {
       this.uploaderEvents[file.id] = new EventTracker(this.uppy)
 
       // Make `resume: true` work like it did in tus-js-client v1.
-      // TODO: Remove in @uppy/tus v2.
+      // TODO: Remove in @lucidweb/uppy-tus v2.
       if (opts.resume) {
         upload.findPreviousUploads().then((previousUploads) => {
           const previousUpload = previousUploads[0]
@@ -281,7 +281,7 @@ module.exports = class Tus extends Plugin {
       let queuedRequest = this.requests.run(() => {
         if (!file.isPaused) {
           // Ensure this gets scheduled to run _after_ `findPreviousUploads()` returns.
-          // TODO: Remove in @uppy/tus v2.
+          // TODO: Remove in @lucidweb/uppy-tus v2.
           Promise.resolve().then(() => {
             upload.start()
           })

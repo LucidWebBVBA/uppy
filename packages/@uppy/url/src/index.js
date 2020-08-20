@@ -1,7 +1,7 @@
-const { Plugin } = require('@uppy/core')
-const Translator = require('@uppy/utils/lib/Translator')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
 const { h } = require('preact')
-const { RequestClient } = require('@uppy/companion-client')
+const { RequestClient } = require('@lucidweb/uppy-companion-client')
 const UrlUI = require('./UrlUI.js')
 const forEachDroppedOrPastedUrl = require('./utils/forEachDroppedOrPastedUrl')
 

@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/utils",
+  "name": "@lucidweb/uppy-utils",
   "description": "Shared utility functions for Uppy Core and plugins maintained by the Uppy team.",
   "version": "3.2.2",
   "license": "MIT",

@@ -1,5 +1,5 @@
 import { ToUppyProps } from './CommonTypes'
-import StatusBar = require('@uppy/status-bar')
+import StatusBar = require('@lucidweb/uppy-status-bar')
 
 export type StatusBarProps = ToUppyProps<StatusBar.StatusBarOptions>
 

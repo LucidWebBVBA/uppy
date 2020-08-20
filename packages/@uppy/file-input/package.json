@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/file-input",
+  "name": "@lucidweb/uppy-file-input",
   "description": "Simple UI of a file input button that works with Uppy right out of the box",
   "version": "1.4.16",
   "license": "MIT",
@@ -22,10 +22,10 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-utils": "file:../utils",
     "preact": "8.2.9"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

@@ -1,4 +1,4 @@
-const { Plugin } = require('@uppy/core')
+const { Plugin } = require('@lucidweb/uppy-core')
 
 module.exports = class DragDrop extends Plugin {
   constructor (uppy, opts) {

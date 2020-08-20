@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/url",
+  "name": "@lucidweb/uppy-url",
   "description": "The Url plugin lets users import files from the Internet. Paste any URL and it’ll be added!",
   "version": "1.5.10",
   "license": "MIT",
@@ -22,11 +22,11 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/companion-client": "file:../companion-client",
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-companion-client": "file:../companion-client",
+    "@lucidweb/uppy-utils": "file:../utils",
     "preact": "8.2.9"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

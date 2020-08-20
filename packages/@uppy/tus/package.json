@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/tus",
+  "name": "@lucidweb/uppy-tus",
   "description": "Resumable uploads for Uppy using Tus.io",
   "version": "1.7.5",
   "license": "MIT",
@@ -22,11 +22,11 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/companion-client": "file:../companion-client",
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-companion-client": "file:../companion-client",
+    "@lucidweb/uppy-utils": "file:../utils",
     "tus-js-client": "^2.1.1"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

@@ -6,7 +6,7 @@ import {
   Image,
   WebView
 } from 'react-native'
-import Instagram from '@uppy/instagram'
+import Instagram from '@lucidweb/uppy-instagram'
 
 function getQueryParamValueFromUrl (name, url) {
   name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]')

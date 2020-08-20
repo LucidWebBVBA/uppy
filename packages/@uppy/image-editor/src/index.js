@@ -1,6 +1,6 @@
-const { Plugin } = require('@uppy/core')
+const { Plugin } = require('@lucidweb/uppy-core')
 const Editor = require('./Editor')
-const Translator = require('@uppy/utils/lib/Translator')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
 const { h } = require('preact')
 
 module.exports = class ImageEditor extends Plugin {

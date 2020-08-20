@@ -1,5 +1,5 @@
-const { AbortController, createAbortError } = require('@uppy/utils/lib/AbortController')
-const delay = require('@uppy/utils/lib/delay')
+const { AbortController, createAbortError } = require('@lucidweb/uppy-utils/lib/AbortController')
+const delay = require('@lucidweb/uppy-utils/lib/delay')
 
 const MB = 1024 * 1024
 

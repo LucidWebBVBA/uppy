@@ -1,4 +1,4 @@
-const Core = require('@uppy/core')
+const Core = require('@lucidweb/uppy-core')
 const Transloadit = require('./')
 
 describe('Transloadit', () => {

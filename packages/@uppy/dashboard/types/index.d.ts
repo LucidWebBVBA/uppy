@@ -1,5 +1,5 @@
-import Uppy = require('@uppy/core')
-import StatusBar = require('@uppy/status-bar')
+import Uppy = require('@lucidweb/uppy-core')
+import StatusBar = require('@lucidweb/uppy-status-bar')
 import DashboardLocale = require('./generatedLocale')
 
 type FieldRenderOptions = {

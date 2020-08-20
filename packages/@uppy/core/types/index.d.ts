@@ -1,10 +1,10 @@
-import UppyUtils = require('@uppy/utils')
+import UppyUtils = require('@lucidweb/uppy-utils')
 
 declare module Uppy {
   // Utility types
   type OmitKey<T, Key> = Pick<T, Exclude<keyof T, Key>>
 
-  // These are defined in @uppy/utils instead of core so it can be used there without creating import cycles
+  // These are defined in @lucidweb/uppy-utils instead of core so it can be used there without creating import cycles
   export type UppyFile<
     TMeta extends IndexedObject<any> = {},
     TBody extends IndexedObject<any> = {}

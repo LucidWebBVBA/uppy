@@ -1,5 +1,5 @@
-const { Plugin } = require('@uppy/core')
-const { Provider } = require('@uppy/companion-client')
+const { Plugin } = require('@lucidweb/uppy-core')
+const { Provider } = require('@lucidweb/uppy-companion-client')
 const DriveProviderViews = require('./DriveProviderViews')
 const { h } = require('preact')
 

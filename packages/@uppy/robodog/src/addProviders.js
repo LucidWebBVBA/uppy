@@ -1,17 +1,17 @@
-const Transloadit = require('@uppy/transloadit')
-const has = require('@uppy/utils/lib/hasProperty')
+const Transloadit = require('@lucidweb/uppy-transloadit')
+const has = require('@lucidweb/uppy-utils/lib/hasProperty')
 
 const remoteProviders = {
-  dropbox: require('@uppy/dropbox'),
-  'google-drive': require('@uppy/google-drive'),
-  instagram: require('@uppy/instagram'),
-  facebook: require('@uppy/facebook'),
-  onedrive: require('@uppy/onedrive'),
-  url: require('@uppy/url')
+  dropbox: require('@lucidweb/uppy-dropbox'),
+  'google-drive': require('@lucidweb/uppy-google-drive'),
+  instagram: require('@lucidweb/uppy-instagram'),
+  facebook: require('@lucidweb/uppy-facebook'),
+  onedrive: require('@lucidweb/uppy-onedrive'),
+  url: require('@lucidweb/uppy-url')
 }
 
 const localProviders = {
-  webcam: require('@uppy/webcam')
+  webcam: require('@lucidweb/uppy-webcam')
 }
 
 const remoteProviderOptionNames = [

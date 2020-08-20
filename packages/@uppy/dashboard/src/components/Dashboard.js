@@ -6,7 +6,7 @@ const EditorPanel = require('./EditorPanel')
 const PanelTopBar = require('./PickerPanelTopBar')
 const FileCard = require('./FileCard')
 const classNames = require('classnames')
-const isDragDropSupported = require('@uppy/utils/lib/isDragDropSupported')
+const isDragDropSupported = require('@lucidweb/uppy-utils/lib/isDragDropSupported')
 const { h } = require('preact')
 const PreactCSSTransitionGroup = require('preact-css-transition-group')
 

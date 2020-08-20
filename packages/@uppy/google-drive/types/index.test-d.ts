@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 import GoogleDrive = require('../')
 
 class SomePlugin extends Uppy.Plugin<{}> {}

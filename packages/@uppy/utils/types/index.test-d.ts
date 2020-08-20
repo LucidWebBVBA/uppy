@@ -1,6 +1,6 @@
 // Can't get this to work correctly with `tsd` right now 🙃
 /*
-import Translator = require('@uppy/utils/lib/Translator')
+import Translator = require('@lucidweb/uppy-utils/lib/Translator')
 
 const emptyLocale = {
   strings: {},

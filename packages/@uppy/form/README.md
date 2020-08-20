@@ -1,8 +1,8 @@
-# @uppy/form
+# @lucidweb/uppy-form
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/form"><img src="https://img.shields.io/npm/v/@uppy/form.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-form"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-form.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 The Form plugin collects metadata from any specified `<form>` element, right before Uppy begins uploading/processing files. It optionally appends results back to the form. Currently the appended result is a stringified version of a result returned from `uppy.upload()`.
@@ -12,8 +12,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const Form = require('@uppy/form')
+const Uppy = require('@lucidweb/uppy-core')
+const Form = require('@lucidweb/uppy-form')
 
 const uppy = new Uppy()
 uppy.use(Form, {
@@ -28,7 +28,7 @@ uppy.use(Form, {
 ## Installation
 
 ```bash
-$ npm install @uppy/form --save
+$ npm install @lucidweb/uppy-form --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

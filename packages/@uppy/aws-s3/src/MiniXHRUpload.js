@@ -1,11 +1,11 @@
 const cuid = require('cuid')
-const { Provider, RequestClient, Socket } = require('@uppy/companion-client')
-const emitSocketProgress = require('@uppy/utils/lib/emitSocketProgress')
-const getSocketHost = require('@uppy/utils/lib/getSocketHost')
-const EventTracker = require('@uppy/utils/lib/EventTracker')
-const ProgressTimeout = require('@uppy/utils/lib/ProgressTimeout')
-const NetworkError = require('@uppy/utils/lib/NetworkError')
-const isNetworkError = require('@uppy/utils/lib/isNetworkError')
+const { Provider, RequestClient, Socket } = require('@lucidweb/uppy-companion-client')
+const emitSocketProgress = require('@lucidweb/uppy-utils/lib/emitSocketProgress')
+const getSocketHost = require('@lucidweb/uppy-utils/lib/getSocketHost')
+const EventTracker = require('@lucidweb/uppy-utils/lib/EventTracker')
+const ProgressTimeout = require('@lucidweb/uppy-utils/lib/ProgressTimeout')
+const NetworkError = require('@lucidweb/uppy-utils/lib/NetworkError')
+const isNetworkError = require('@lucidweb/uppy-utils/lib/isNetworkError')
 
 // See XHRUpload
 function buildResponseError (xhr, error) {

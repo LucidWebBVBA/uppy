@@ -1,5 +1,5 @@
 import { expectType, expectError } from 'tsd'
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 import Dashboard = require('../')
 
 {

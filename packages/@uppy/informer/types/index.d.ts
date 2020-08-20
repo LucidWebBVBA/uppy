@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 
 declare module Informer {
   interface InformerOptions extends Uppy.PluginOptions {

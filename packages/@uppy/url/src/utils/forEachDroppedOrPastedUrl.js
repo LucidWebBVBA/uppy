@@ -1,4 +1,4 @@
-const toArray = require('@uppy/utils/lib/toArray')
+const toArray = require('@lucidweb/uppy-utils/lib/toArray')
 
 /*
   SITUATION

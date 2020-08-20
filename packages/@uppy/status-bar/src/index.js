@@ -1,9 +1,9 @@
-const { Plugin } = require('@uppy/core')
-const Translator = require('@uppy/utils/lib/Translator')
+const { Plugin } = require('@lucidweb/uppy-core')
+const Translator = require('@lucidweb/uppy-utils/lib/Translator')
 const StatusBarUI = require('./StatusBar')
 const statusBarStates = require('./StatusBarStates')
-const getSpeed = require('@uppy/utils/lib/getSpeed')
-const getBytesRemaining = require('@uppy/utils/lib/getBytesRemaining')
+const getSpeed = require('@lucidweb/uppy-utils/lib/getSpeed')
+const getBytesRemaining = require('@lucidweb/uppy-utils/lib/getBytesRemaining')
 
 /**
  * StatusBar: renders a status bar with upload/pause/resume/cancel/retry buttons,

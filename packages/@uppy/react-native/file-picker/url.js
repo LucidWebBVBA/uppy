@@ -7,7 +7,7 @@ import {
   TextInput,
   View
 } from 'react-native'
-import Url from '@uppy/url'
+import Url from '@lucidweb/uppy-url'
 
 export default class UppyRNUrl extends React.Component {
   constructor () {

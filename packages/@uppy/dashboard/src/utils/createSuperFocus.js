@@ -1,5 +1,5 @@
 const debounce = require('lodash.debounce')
-const FOCUSABLE_ELEMENTS = require('@uppy/utils/lib/FOCUSABLE_ELEMENTS')
+const FOCUSABLE_ELEMENTS = require('@lucidweb/uppy-utils/lib/FOCUSABLE_ELEMENTS')
 const getActiveOverlayEl = require('./getActiveOverlayEl')
 
 /*

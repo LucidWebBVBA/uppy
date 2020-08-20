@@ -1,8 +1,8 @@
-@import '@uppy/core/src/_utils.scss';
-@import '@uppy/core/src/_variables.scss';
-@import '@uppy/informer/src/style.scss';
-@import '@uppy/status-bar/src/style.scss';
-@import '@uppy/provider-views/src/style.scss';
+@import '@lucidweb/uppy-core/src/_utils.scss';
+@import '@lucidweb/uppy-core/src/_variables.scss';
+@import '@lucidweb/uppy-informer/src/style.scss';
+@import '@lucidweb/uppy-status-bar/src/style.scss';
+@import '@lucidweb/uppy-provider-views/src/style.scss';
 
 // Component-specific css imports
 @import './components/FileItem/index.scss';

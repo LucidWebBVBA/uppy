@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/webcam",
+  "name": "@lucidweb/uppy-webcam",
   "description": "Uppy plugin that takes photos or records videos using the device's camera.",
   "version": "1.6.11",
   "license": "MIT",
@@ -26,10 +26,10 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-utils": "file:../utils",
     "preact": "8.2.9"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

@@ -1,8 +1,8 @@
-# @uppy/url
+# @lucidweb/uppy-url
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/url"><img src="https://img.shields.io/npm/v/@uppy/url.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-url"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-url.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 The Url plugin lets users import files from the Internet. Paste any URL and it’ll be added!
@@ -14,8 +14,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const Url = require('@uppy/url')
+const Uppy = require('@lucidweb/uppy-core')
+const Url = require('@lucidweb/uppy-url')
 
 const uppy = new Uppy()
 uppy.use(Url, {
@@ -26,7 +26,7 @@ uppy.use(Url, {
 ## Installation
 
 ```bash
-$ npm install @uppy/url --save
+$ npm install @lucidweb/uppy-url --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

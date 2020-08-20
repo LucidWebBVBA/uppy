@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/xhr-upload",
+  "name": "@lucidweb/uppy-xhr-upload",
   "description": "Plain and simple classic HTML multipart form uploads with Uppy, as well as uploads using the HTTP PUT method.",
   "version": "1.6.3",
   "license": "MIT",
@@ -24,11 +24,11 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/companion-client": "file:../companion-client",
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-companion-client": "file:../companion-client",
+    "@lucidweb/uppy-utils": "file:../utils",
     "cuid": "^2.1.1"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   }
 }

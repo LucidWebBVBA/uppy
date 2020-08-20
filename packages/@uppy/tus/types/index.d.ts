@@ -1,4 +1,4 @@
-import Uppy = require('@uppy/core')
+import Uppy = require('@lucidweb/uppy-core')
 import { UploadOptions } from 'tus-js-client'
 
 declare module Tus {

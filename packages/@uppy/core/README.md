@@ -1,8 +1,8 @@
-# @uppy/core
+# @lucidweb/uppy-core
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/core"><img src="https://img.shields.io/npm/v/@uppy/core.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-core"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-core.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 Uppy is a sleek, modular JavaScript file uploader that integrates seamlessly with any application. It’s fast, easy to use and lets you worry about more important problems than building a file uploader.
@@ -18,7 +18,7 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
+const Uppy = require('@lucidweb/uppy-core')
 
 const uppy = new Uppy()
 uppy.use(SomePlugin)
@@ -27,7 +27,7 @@ uppy.use(SomePlugin)
 ## Installation
 
 ```bash
-$ npm install @uppy/core --save
+$ npm install @lucidweb/uppy-core --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

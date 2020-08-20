@@ -1,5 +1,5 @@
-const Dashboard = require('@uppy/dashboard')
-const has = require('@uppy/utils/lib/hasProperty')
+const Dashboard = require('@lucidweb/uppy-dashboard')
+const has = require('@lucidweb/uppy-utils/lib/hasProperty')
 
 const dashboardOptionNames = [
   'metaFields',

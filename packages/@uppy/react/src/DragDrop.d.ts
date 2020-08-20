@@ -1,5 +1,5 @@
 import { ToUppyProps } from './CommonTypes'
-import DragDrop = require('@uppy/drag-drop')
+import DragDrop = require('@lucidweb/uppy-drag-drop')
 
 export type DragDropProps = ToUppyProps<DragDrop.DragDropOptions>
 

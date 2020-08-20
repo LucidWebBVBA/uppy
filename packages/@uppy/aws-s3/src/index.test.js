@@ -1,5 +1,5 @@
 require('whatwg-fetch')
-const Core = require('@uppy/core')
+const Core = require('@lucidweb/uppy-core')
 const AwsS3 = require('./')
 
 describe('AwsS3', () => {

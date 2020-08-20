@@ -1,5 +1,5 @@
 {
-  "name": "@uppy/zoom",
+  "name": "@lucidweb/uppy-zoom",
   "description": "Import files from zoom, into Uppy.",
   "version": "0.1.2",
   "license": "MIT",
@@ -20,13 +20,13 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@uppy/companion-client": "file:../companion-client",
-    "@uppy/provider-views": "file:../provider-views",
-    "@uppy/utils": "file:../utils",
+    "@lucidweb/uppy-companion-client": "file:../companion-client",
+    "@lucidweb/uppy-provider-views": "file:../provider-views",
+    "@lucidweb/uppy-utils": "file:../utils",
     "preact": "8.2.9"
   },
   "peerDependencies": {
-    "@uppy/core": "^1.0.0"
+    "@lucidweb/uppy-core": "^1.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,4 +1,4 @@
-import UppyUtils = require('@uppy/utils')
+import UppyUtils = require('@lucidweb/uppy-utils')
 
 declare class DefaultStore implements UppyUtils.Store {
   constructor ()

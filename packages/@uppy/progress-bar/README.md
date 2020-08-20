@@ -1,8 +1,8 @@
-# @uppy/progress-bar
+# @lucidweb/uppy-progress-bar
 
 <img src="https://uppy.io/images/logos/uppy-dog-head-arrow.svg" width="120" alt="Uppy logo: a superman puppy in a pink suit" align="right">
 
-<a href="https://www.npmjs.com/package/@uppy/progress-bar"><img src="https://img.shields.io/npm/v/@uppy/progress-bar.svg?style=flat-square"></a>
+<a href="https://www.npmjs.com/package/@lucidweb/uppy-progress-bar"><img src="https://img.shields.io/npm/v/@lucidweb/uppy-progress-bar.svg?style=flat-square"></a>
 <a href="https://travis-ci.org/transloadit/uppy"><img src="https://img.shields.io/travis/transloadit/uppy/master.svg?style=flat-square" alt="Build Status"></a>
 
 ProgressBar is a minimalist plugin that shows the current upload progress in a thin bar element. Similar to the ones used by YouTube and GitHub when navigating between pages.
@@ -12,8 +12,8 @@ Uppy is being developed by the folks at [Transloadit](https://transloadit.com), 
 ## Example
 
 ```js
-const Uppy = require('@uppy/core')
-const ProgressBar = require('@uppy/progress-bar')
+const Uppy = require('@lucidweb/uppy-core')
+const ProgressBar = require('@lucidweb/uppy-progress-bar')
 
 const uppy = new Uppy()
 uppy.use(ProgressBar, {
@@ -24,7 +24,7 @@ uppy.use(ProgressBar, {
 ## Installation
 
 ```bash
-$ npm install @uppy/progress-bar --save
+$ npm install @lucidweb/uppy-progress-bar --save
 ```
 
 We recommend installing from npm and then using a module bundler such as [Webpack](https://webpack.js.org/), [Browserify](http://browserify.org/) or [Rollup.js](http://rollupjs.org/).

@@ -1,5 +1,5 @@
 const nock = require('nock')
-const Core = require('@uppy/core')
+const Core = require('@lucidweb/uppy-core')
 const XHRUpload = require('./index')
 
 describe('XHRUpload', () => {

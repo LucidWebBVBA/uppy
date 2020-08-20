@@ -1,5 +1,5 @@
 import { ToUppyProps } from './CommonTypes'
-import ProgressBar = require('@uppy/progress-bar')
+import ProgressBar = require('@lucidweb/uppy-progress-bar')
 
 export type ProgressBarProps = ToUppyProps<ProgressBar.ProgressBarOptions>
 

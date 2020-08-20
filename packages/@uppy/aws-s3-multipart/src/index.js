@@ -1,9 +1,9 @@
-const { Plugin } = require('@uppy/core')
-const { Socket, Provider, RequestClient } = require('@uppy/companion-client')
-const EventTracker = require('@uppy/utils/lib/EventTracker')
-const emitSocketProgress = require('@uppy/utils/lib/emitSocketProgress')
-const getSocketHost = require('@uppy/utils/lib/getSocketHost')
-const RateLimitedQueue = require('@uppy/utils/lib/RateLimitedQueue')
+const { Plugin } = require('@lucidweb/uppy-core')
+const { Socket, Provider, RequestClient } = require('@lucidweb/uppy-companion-client')
+const EventTracker = require('@lucidweb/uppy-utils/lib/EventTracker')
+const emitSocketProgress = require('@lucidweb/uppy-utils/lib/emitSocketProgress')
+const getSocketHost = require('@lucidweb/uppy-utils/lib/getSocketHost')
+const RateLimitedQueue = require('@lucidweb/uppy-utils/lib/RateLimitedQueue')
 const Uploader = require('./MultipartUploader')
 
 function assertServerError (res) {

@@ -1,5 +1,5 @@
-const Uppy = require('@uppy/core')
-const has = require('@uppy/utils/lib/hasProperty')
+const Uppy = require('@lucidweb/uppy-core')
+const has = require('@lucidweb/uppy-utils/lib/hasProperty')
 
 const eventNames = {
   // File management events

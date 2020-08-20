@@ -1,7 +1,7 @@
 {
   "name": "@lucidweb/uppy-dashboard",
   "description": "Universal UI plugin for Uppy.",
-  "version": "1.12.5",
+  "version": "1.12.6",
   "license": "MIT",
   "main": "lib/index.js",
   "style": "dist/style.min.css",
@@ -22,12 +22,12 @@
     "url": "git+https://github.com/transloadit/uppy.git"
   },
   "dependencies": {
-    "@transloadit/prettier-bytes": "0.0.7",
     "@lucidweb/uppy-informer": "file:../informer",
     "@lucidweb/uppy-provider-views": "file:../provider-views",
     "@lucidweb/uppy-status-bar": "file:../status-bar",
     "@lucidweb/uppy-thumbnail-generator": "file:../thumbnail-generator",
     "@lucidweb/uppy-utils": "file:../utils",
+    "@transloadit/prettier-bytes": "0.0.7",
     "classnames": "^2.2.6",
     "cuid": "^2.1.1",
     "is-shallow-equal": "^1.0.1",

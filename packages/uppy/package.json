@@ -35,6 +35,7 @@
     "@lucidweb/uppy-companion-client": "file:../@uppy/companion-client",
     "@lucidweb/uppy-core": "file:../@uppy/core",
     "@lucidweb/uppy-dashboard": "file:../@uppy/dashboard",
+    "@lucidweb/uppy-image-editor": "file:../@uppy/image-editor",
     "@lucidweb/uppy-drag-drop": "file:../@uppy/drag-drop",
     "@lucidweb/uppy-dropbox": "file:../@uppy/dropbox",
     "@lucidweb/uppy-facebook": "file:../@uppy/facebook",

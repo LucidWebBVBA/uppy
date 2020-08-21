@@ -5,7 +5,7 @@ const prettierBytes = require('@transloadit/prettier-bytes')
 const prettyETA = require('@lucidweb/uppy-utils/lib/prettyETA')
 const { h } = require('preact')
 
-function calculateProcessingProgress (files) {
+function calculateProcessingProgress(files) {
   // Collect pre or postprocessing progress states.
   const progresses = []
   Object.keys(files).forEach((fileID) => {
@@ -24,7 +24,7 @@ function calculateProcessingProgress (files) {
   const value = progresses.filter(isDeterminate).reduce((total, progress, index, all) => {
     return total + progress.value / all.length
   }, 0)
-  function isDeterminate (progress) {
+  function isDeterminate(progress) {
     return progress.mode === 'determinate'
   }
 
@@ -35,7 +35,7 @@ function calculateProcessingProgress (files) {
   }
 }
 
-function togglePauseResume (props) {
+function togglePauseResume(props) {
   if (props.isAllComplete) return
 
   if (!props.resumableUploads) {
@@ -113,27 +113,33 @@ module.exports = (props) => {
                            ${progressMode ? 'is-' + progressMode : ''}`
 
   const statusBarClassNames = classNames(
-    { 'uppy-Root': props.isTargetDOMEl },
-    'uppy-StatusBar',
-    `is-${uploadState}`
+    'bg-gray-800',
+    'flex',
+    'flex-col',
+    'text-gray-300',
+    'items-center'
   )
 
   return (
-    <div class={statusBarClassNames} aria-hidden={isHidden}>
-      <div
-        class={progressClassNames}
-        style={{ width: width + '%' }}
-        role="progressbar"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-valuenow={progressValue}
-      />
-      {progressBarContent}
-      <div class="uppy-StatusBar-actions">
+    <div class={statusBarClassNames} style={{ minHeight: "90px" }} aria-hidden={false}> {/** isHidden  */}
+      <div class={`w-1/2 flex justify-start border border-primary rounded-full overflow-hidden ${props.isUploadStarted ? 'opacity-100': 'opacity-0'}`}>
+        <div
+          class={`${progressClassNames} relative bg-primary`}
+          style={{ width: width + '%', height: "15px", display: 'block' }}
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow={progressValue}
+        />
+      </div>
+      <div class='flex flex-row justify-between items-center w-full font-basenormal mt-4'>
+        {progressBarContent}
         {showUploadBtn ? <UploadBtn {...props} uploadState={uploadState} /> : null}
-        {showRetryBtn ? <RetryBtn {...props} /> : null}
-        {showPauseResumeBtn ? <PauseResumeButton {...props} /> : null}
-        {showCancelBtn ? <CancelBtn {...props} /> : null}
+        <div class="bg-gray-800 flex text-gray-300 mt-5">
+          {showRetryBtn ? <RetryBtn {...props} /> : null}
+          {showPauseResumeBtn ? <PauseResumeButton {...props} /> : null}
+          {showCancelBtn ? <CancelBtn {...props} /> : null}
+        </div>
       </div>
     </div>
   )
@@ -141,17 +147,15 @@ module.exports = (props) => {
 
 const UploadBtn = (props) => {
   const uploadBtnClassNames = classNames(
-    'uppy-u-reset',
-    'uppy-c-btn',
-    'uppy-StatusBar-actionBtn',
-    'uppy-StatusBar-actionBtn--upload',
-    { 'uppy-c-btn-primary': props.uploadState === statusBarStates.STATE_WAITING }
+    'a-button',
+    '-secondary',
   )
 
   return (
     <button
       type="button"
       class={uploadBtnClassNames}
+      style={{ margin: '0 auto' }}
       aria-label={props.i18n('uploadXFiles', { smart_count: props.newFiles })}
       onclick={props.startUpload}
       data-uppy-super-focusable
@@ -190,12 +194,7 @@ const CancelBtn = (props) => {
       onclick={props.cancelAll}
       data-uppy-super-focusable
     >
-      <svg aria-hidden="true" focusable="false" class="uppy-c-icon" width="16" height="16" viewBox="0 0 16 16">
-        <g fill="none" fill-rule="evenodd">
-          <circle fill="#888" cx="8" cy="8" r="8" />
-          <path fill="#FFF" d="M9.283 8l2.567 2.567-1.283 1.283L8 9.283 5.433 11.85 4.15 10.567 6.717 8 4.15 5.433 5.433 4.15 8 6.717l2.567-2.567 1.283 1.283z" />
-        </g>
-      </svg>
+      <span class="icon-cross text-gray-300 text-lg"></span>
     </button>
   )
 }
@@ -214,20 +213,10 @@ const PauseResumeButton = (props) => {
       data-uppy-super-focusable
     >
       {isAllPaused ? (
-        <svg aria-hidden="true" focusable="false" class="uppy-c-icon" width="16" height="16" viewBox="0 0 16 16">
-          <g fill="none" fill-rule="evenodd">
-            <circle fill="#888" cx="8" cy="8" r="8" />
-            <path fill="#FFF" d="M6 4.25L11.5 8 6 11.75z" />
-          </g>
-        </svg>
+        <span class="icon-undo text-gray-300 text-lg"></span>
       ) : (
-        <svg aria-hidden="true" focusable="false" class="uppy-c-icon" width="16" height="16" viewBox="0 0 16 16">
-          <g fill="none" fill-rule="evenodd">
-            <circle fill="#888" cx="8" cy="8" r="8" />
-            <path d="M5 4.5h2v7H5v-7zm4 0h2v7H9v-7z" fill="#FFF" />
-          </g>
-        </svg>
-      )}
+          <span class="icon-pause text-gray-300 text-xl"></span>
+        )}
     </button>
   )
 }
@@ -337,10 +326,10 @@ const ProgressBarUploading = (props) => {
   const showUploadNewlyAddedFiles = props.newFiles && props.isUploadStarted
 
   return (
-    <div class="uppy-StatusBar-content" aria-label={title} title={title}>
+    <div class="uppy-StatusBar-content text-gray-300" aria-label={title} title={title}>
       {!props.isAllPaused ? <LoadingSpinner /> : null}
       <div class="uppy-StatusBar-status">
-        <div class="uppy-StatusBar-statusPrimary">
+        <div class="uppy-StatusBar-statusPrimary text-gray-300">
           {props.supportsUploadProgress ? `${title}: ${props.totalProgress}%` : title}
         </div>
         {!props.isAllPaused && !showUploadNewlyAddedFiles && props.showProgressDetails
@@ -354,9 +343,9 @@ const ProgressBarUploading = (props) => {
 
 const ProgressBarComplete = ({ totalProgress, i18n }) => {
   return (
-    <div class="uppy-StatusBar-content" role="status" title={i18n('complete')}>
+    <div class="uppy-StatusBar-content text-gray-300 w-full flex justify-center mt-4" role="status" title={i18n('complete')}>
       <div class="uppy-StatusBar-status">
-        <div class="uppy-StatusBar-statusPrimary">
+        <div class="uppy-StatusBar-statusPrimary text-gray-300">
           <svg aria-hidden="true" focusable="false" class="uppy-StatusBar-statusIndicator uppy-c-icon" width="15" height="11" viewBox="0 0 15 11">
             <path d="M.414 5.843L1.627 4.63l3.472 3.472L13.202 0l1.212 1.213L5.1 10.528z" />
           </svg>
@@ -368,15 +357,15 @@ const ProgressBarComplete = ({ totalProgress, i18n }) => {
 }
 
 const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
-  function displayErrorAlert () {
+  function displayErrorAlert() {
     const errorMessage = `${i18n('uploadFailed')} \n\n ${error}`
     alert(errorMessage)
   }
 
   return (
-    <div class="uppy-StatusBar-content" role="alert" title={i18n('uploadFailed')}>
+    <div class="uppy-StatusBar-content text-gray-300" role="alert" title={i18n('uploadFailed')}>
       <div class="uppy-StatusBar-status">
-        <div class="uppy-StatusBar-statusPrimary">
+        <div class="uppy-StatusBar-statusPrimary text-gray-300">
           <svg aria-hidden="true" focusable="false" class="uppy-StatusBar-statusIndicator uppy-c-icon" width="11" height="11" viewBox="0 0 11 11">
             <path d="M4.278 5.5L0 1.222 1.222 0 5.5 4.278 9.778 0 11 1.222 6.722 5.5 11 9.778 9.778 11 5.5 6.722 1.222 11 0 9.778z" />
           </svg>

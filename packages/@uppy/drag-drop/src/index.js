@@ -12,7 +12,7 @@ const { h } = require('preact')
 module.exports = class DragDrop extends Plugin {
   static VERSION = require('../package.json').version
 
-  constructor (uppy, opts) {
+  constructor(uppy, opts) {
     super(uppy, opts)
     this.type = 'acquirer'
     this.id = this.opts.id || 'DragDrop'
@@ -31,7 +31,8 @@ module.exports = class DragDrop extends Plugin {
       inputName: 'files[]',
       width: '100%',
       height: '100%',
-      note: null
+      note: null,
+      fileType: 'video'
     }
 
     // Merge default options with the ones set by user
@@ -52,19 +53,19 @@ module.exports = class DragDrop extends Plugin {
     this.render = this.render.bind(this)
   }
 
-  setOptions (newOpts) {
+  setOptions(newOpts) {
     super.setOptions(newOpts)
     this.i18nInit()
   }
 
-  i18nInit () {
+  i18nInit() {
     this.translator = new Translator([this.defaultLocale, this.uppy.locale, this.opts.locale])
     this.i18n = this.translator.translate.bind(this.translator)
     this.i18nArray = this.translator.translateArray.bind(this.translator)
     this.setPluginState() // so that UI re-renders and we see the updated locale
   }
 
-  addFiles (files) {
+  addFiles(files) {
     const descriptors = files.map((file) => ({
       source: this.id,
       name: file.name,
@@ -84,7 +85,7 @@ module.exports = class DragDrop extends Plugin {
     }
   }
 
-  onInputChange (event) {
+  onInputChange(event) {
     this.uppy.log('[DragDrop] Files selected through input')
     const files = toArray(event.target.files)
     this.addFiles(files)
@@ -98,7 +99,7 @@ module.exports = class DragDrop extends Plugin {
     event.target.value = null
   }
 
-  handleDrop (event, dropCategory) {
+  handleDrop(event, dropCategory) {
     event.preventDefault()
     event.stopPropagation()
     clearTimeout(this.removeDragOverClassTimeout)
@@ -115,7 +116,7 @@ module.exports = class DragDrop extends Plugin {
       .then((files) => this.addFiles(files))
   }
 
-  handleDragOver (event) {
+  handleDragOver(event) {
     event.preventDefault()
     event.stopPropagation()
 
@@ -127,7 +128,7 @@ module.exports = class DragDrop extends Plugin {
     this.setPluginState({ isDraggingOver: true })
   }
 
-  handleDragLeave (event) {
+  handleDragLeave(event) {
     event.preventDefault()
     event.stopPropagation()
 
@@ -138,7 +139,7 @@ module.exports = class DragDrop extends Plugin {
     }, 50)
   }
 
-  renderHiddenFileInput () {
+  renderHiddenFileInput() {
     const restrictions = this.uppy.opts.restrictions
     return (
       <input
@@ -154,34 +155,92 @@ module.exports = class DragDrop extends Plugin {
     )
   }
 
-  renderArrowSvg () {
+  renderArrowSvg() {
     return (
-      <svg aria-hidden="true" focusable="false" class="uppy-c-icon uppy-DragDrop-arrow" width="16" height="16" viewBox="0 0 16 16">
-        <path d="M11 10V0H5v10H2l6 6 6-6h-3zm0 0" fill-rule="evenodd" />
-      </svg>
+      <span class="
+        icon-upload
+        text-6xl
+        text-gray-300
+        ml-1
+      " />
     )
   }
 
-  renderLabel () {
+  renderLabel() {
     return (
-      <div class="uppy-DragDrop-label">
-        {this.i18nArray('dropHereOr', {
-          browse: <span class="uppy-DragDrop-browse">{this.i18n('browse')}</span>
-        })}
+      <div class="
+        text-base
+        text-gray-300
+        flex
+        flex-col
+        font-basenormal
+        items-center
+      ">
+        <span class="mt-5">{this.i18n('dropHereOr')}</span>
+        <span class="mt-5">OR</span>
+        <button class="
+          a-button
+          -secondary
+          h-button-sm
+          min-w-button-sm
+          mt-5"
+        style={{maxWidth: "150px"}}
+        type="button">
+          {this.i18n('browse')}
+        </button>
       </div>
     )
   }
 
-  renderNote () {
+  renderNote() {
+    const defaultNoteVideo = (
+      <span>
+        For the best possible experience, the preferred
+        video container format should be  <span class="font-basebold">.mp4</span>  encoded in <span class="font-basebold">H.264</span>.
+        Other formats may not be compatible with the browser.
+      </span>);
+    const defaultNoteImage = (
+      <span>
+        For the best possible experience, your image format should be <span class="font-basebold">.png or .jpg</span>.
+        Other formats may not be compatible with the browser.
+      </span>
+    )
+    const defaultNoteLogo = (
+      <span>
+        For the best possible experience, your image format should be <span class="font-basebold">.png or .jpg</span> with dimensions of 150x150 pixels max.
+        Other formats may not be compatible with the browser.
+      </span>
+    )
+    const fileTypes = {
+      "video": defaultNoteVideo,
+      "image": defaultNoteImage,
+      "logo": defaultNoteLogo
+    }
+    const defaultNote = fileTypes[this.opts.fileType];
+    const note = this.opts.note ? this.opts.note : defaultNote;
+
     return (
-      <span class="uppy-DragDrop-note">{this.opts.note}</span>
+      <div class="
+        uppy-DragDrop-note
+        text-base
+        font-basenormal
+        text-gray-300
+        text-center
+        container
+        mt-5"
+        style={{maxWidth: "380px"}}>
+        {note}
+      </div>
     )
   }
 
-  render (state) {
+  render(state) {
     const dragDropClass = `uppy-Root
       uppy-u-reset
       uppy-DragDrop-container
+      border-none
+      bg-gray-800
+      rounded-none
       ${this.isDragDropSupported ? 'uppy-DragDrop--isDragDropSupported' : ''}
       ${this.getPluginState().isDraggingOver ? 'uppy-DragDrop--isDraggingOver' : ''}
     `
@@ -211,7 +270,7 @@ module.exports = class DragDrop extends Plugin {
     )
   }
 
-  install () {
+  install() {
     this.setPluginState({
       isDraggingOver: false
     })
@@ -221,7 +280,7 @@ module.exports = class DragDrop extends Plugin {
     }
   }
 
-  uninstall () {
+  uninstall() {
     this.unmount()
   }
 }

@@ -50,6 +50,7 @@ module.exports = class DragDrop extends Plugin {
     this.handleDragLeave = this.handleDragLeave.bind(this)
     this.handleDrop = this.handleDrop.bind(this)
     this.addFiles = this.addFiles.bind(this)
+    this.resetFiles = this.resetFiles.bind(this)
     this.render = this.render.bind(this)
   }
 
@@ -80,8 +81,19 @@ module.exports = class DragDrop extends Plugin {
 
     try {
       this.uppy.addFiles(descriptors)
+      this.setPluginState({ fileAdded: true })
     } catch (err) {
       this.uppy.log(err)
+    }
+  }
+
+  resetFiles() {
+    try {
+      this.uppy.reset();
+      this.setPluginState({ fileAdded: false })
+    }
+    catch (err) {
+      this.uppy.log(err);
     }
   }
 
@@ -90,12 +102,6 @@ module.exports = class DragDrop extends Plugin {
     const files = toArray(event.target.files)
     this.addFiles(files)
 
-    // We clear the input after a file is selected, because otherwise
-    // change event is not fired in Chrome and Safari when a file
-    // with the same name is selected.
-    // ___Why not use value="" on <input/> instead?
-    //    Because if we use that method of clearing the input,
-    //    Chrome will not trigger change if we drop the same file twice (Issue #768).
     event.target.value = null
   }
 
@@ -157,37 +163,81 @@ module.exports = class DragDrop extends Plugin {
 
   renderArrowSvg() {
     return (
-      <span class="
-        icon-upload
+      <span id='upload-icon' class={`
+        ${this.getPluginState().fileAdded ? 'icon-arrow-up' : 'icon-upload'}
         text-6xl
         text-gray-300
         ml-1
-      " />
+        mt-4
+      `}/>
     )
   }
 
   renderLabel() {
     return (
-      <div class="
-        text-base
-        text-gray-300
-        flex
-        flex-col
-        font-basenormal
-        items-center
+      <div
+        class="
+          text-base
+          text-gray-300
+          flex
+          flex-col
+          font-basenormal
+          items-center
       ">
-        <span class="mt-5">{this.i18n('dropHereOr')}</span>
-        <span class="mt-5">OR</span>
-        <button class="
-          a-button
-          -secondary
-          h-button-sm
-          min-w-button-sm
-          mt-5"
-        style={{maxWidth: "150px"}}
-        type="button">
-          {this.i18n('browse')}
-        </button>
+        {
+          this.getPluginState().fileAdded
+            ? <span class='my-8'>
+                Selected file:
+                <p
+                  class=''
+                  style={{
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    maxWidth:'250px'
+                  }}>
+                {this.uppy.getFiles()[0].data.name /** @NOTE: data.name gives us the original filename, not the one generated with the timestamp */ }
+                </p>
+              </span>
+            : <div class='flex flex-col'>
+              <span class="mt-5">{this.i18n('dropHereOr')}</span>
+              <span class="mt-5">OR</span>
+            </div>
+        }
+
+        <div id='upload-btns' class="flex">
+          <button
+            class="
+              a-button
+              -secondary
+              h-button-sm
+              min-w-button-sm
+              mt-5"
+            disabled={this.getPluginState().fileAdded}
+            style={{ maxWidth: "150px" }}
+            type="button">
+            {this.i18n('browse')}
+          </button>
+          {
+            this.getPluginState().fileAdded
+              ? <button
+                  id='reset-button'
+                  class="
+                    a-button
+                    -secondary
+                    h-button-sm
+                    min-w-button-sm
+                    mt-5
+                    ml-5
+                  "
+                  style={{ maxWidth: "150px" }}
+                  type="button"
+                  onClick={this.resetFiles}>
+                    Change File
+                </button>
+              : ''
+          }
+        </div>
       </div>
     )
   }
@@ -205,16 +255,23 @@ module.exports = class DragDrop extends Plugin {
         Other formats may not be compatible with the browser.
       </span>
     )
-    const defaultNoteLogo = (
+    // const defaultNoteLogo = (
+    //   <span>
+    //     For the best possible experience, your image format should be <span class="font-basebold">.png or .jpg</span> with dimensions of 150x150 pixels max.
+    //     Other formats may not be compatible with the browser.
+    //   </span>
+    // )
+    const defaultNoteAudio = (
       <span>
-        For the best possible experience, your image format should be <span class="font-basebold">.png or .jpg</span> with dimensions of 150x150 pixels max.
+        For the best possible experience, your audio format should be <span class="font-basebold">.mp3 or .wav</span>.
         Other formats may not be compatible with the browser.
       </span>
     )
     const fileTypes = {
-      "video": defaultNoteVideo,
-      "image": defaultNoteImage,
-      "logo": defaultNoteLogo
+      "videos": defaultNoteVideo,
+      "images": defaultNoteImage,
+      // "logos": defaultNoteLogo, @TODO: implement way to differenciate 360/2Dpics and logos (much smaller)
+      "audios": defaultNoteAudio,
     }
     const defaultNote = fileTypes[this.opts.fileType];
     const note = this.opts.note ? this.opts.note : defaultNote;
@@ -228,7 +285,7 @@ module.exports = class DragDrop extends Plugin {
         text-center
         container
         mt-5"
-        style={{maxWidth: "380px"}}>
+        style={{ maxWidth: "380px" }}>
         {note}
       </div>
     )
@@ -243,6 +300,8 @@ module.exports = class DragDrop extends Plugin {
       rounded-none
       ${this.isDragDropSupported ? 'uppy-DragDrop--isDragDropSupported' : ''}
       ${this.getPluginState().isDraggingOver ? 'uppy-DragDrop--isDraggingOver' : ''}
+      w-full
+      py-6
     `
 
     const dragDropStyle = {
@@ -272,7 +331,7 @@ module.exports = class DragDrop extends Plugin {
 
   install() {
     this.setPluginState({
-      isDraggingOver: false
+      isDraggingOver: false, fileAdded: false
     })
     const target = this.opts.target
     if (target) {

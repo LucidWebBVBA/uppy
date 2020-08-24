@@ -117,25 +117,64 @@ module.exports = (props) => {
     'flex',
     'flex-col',
     'text-gray-300',
-    'items-center'
+    'items-center',
+    'justify-between',
+    'transition-all',
+    'duration-300'
   )
 
   return (
-    <div class={statusBarClassNames} style={{ minHeight: "90px" }} aria-hidden={false}> {/** isHidden  */}
-      <div class={`w-1/2 flex justify-start border border-primary rounded-full overflow-hidden ${props.isUploadStarted ? 'opacity-100': 'opacity-0'}`}>
+    <div class={`
+      ${statusBarClassNames}
+      ${(props.newFiles || props.isUploadStarted || props.isAllComplete)
+        ? "h-24 opacity-100 m-6"
+        : "h-0 opacity-0 m-0"
+      }
+    `} aria-hidden={false}> {/** isHidden  */}
+      <div class={
+        `w-1/2
+        flex
+        justify-start
+        items-center
+        border
+        border-primary
+        rounded-full
+        overflow-hidden
+        ${props.isUploadStarted ? 'opacity-100': 'opacity-0'}`
+      }>
         <div
-          class={`${progressClassNames} relative bg-primary`}
-          style={{ width: width + '%', height: "15px", display: 'block' }}
+          class={`
+            ${progressClassNames}
+            relative
+            bg-rainbow
+            transition-all
+            duration-300
+            rounded-full
+            ${(props.isUploadStarted || props.isAllComplete)
+              ? "h-4 opacity-100"
+              : "h-0 opacity-0"
+            }
+          `}
+          style={{ width: width + '%', display: 'block' }}
           role="progressbar"
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow={progressValue}
         />
       </div>
-      <div class='flex flex-row justify-between items-center w-full font-basenormal mt-4'>
+      <div class={`
+        flex
+        flex-row
+        justify-between
+        items-center
+        w-full
+        font-basenormal
+        mt-4
+        ${props.isAllPaused ? 'transform -translate-y-3' : 'transform translate-y-0'}
+        `}>
         {progressBarContent}
         {showUploadBtn ? <UploadBtn {...props} uploadState={uploadState} /> : null}
-        <div class="bg-gray-800 flex text-gray-300 mt-5">
+        <div class="bg-gray-800 flex text-gray-300">
           {showRetryBtn ? <RetryBtn {...props} /> : null}
           {showPauseResumeBtn ? <PauseResumeButton {...props} /> : null}
           {showCancelBtn ? <CancelBtn {...props} /> : null}
@@ -148,7 +187,8 @@ module.exports = (props) => {
 const UploadBtn = (props) => {
   const uploadBtnClassNames = classNames(
     'a-button',
-    '-secondary',
+    '-primary',
+    `${props.newFiles && (!props.isUploadStarted || !props.isAllComplete) ? 'transform -translate-y-10' : 'transform translate-y-0'}`
   )
 
   return (
@@ -207,7 +247,7 @@ const PauseResumeButton = (props) => {
     <button
       title={title}
       aria-label={title}
-      class="uppy-u-reset uppy-StatusBar-actionCircleBtn"
+      class="uppy-u-reset uppy-StatusBar-actionCircleBtn mr-4"
       type="button"
       onclick={() => togglePauseResume(props)}
       data-uppy-super-focusable
@@ -327,7 +367,7 @@ const ProgressBarUploading = (props) => {
 
   return (
     <div class="uppy-StatusBar-content text-gray-300" aria-label={title} title={title}>
-      {!props.isAllPaused ? <LoadingSpinner /> : null}
+      {/* {!props.isAllPaused ? <LoadingSpinner /> : null} */}
       <div class="uppy-StatusBar-status">
         <div class="uppy-StatusBar-statusPrimary text-gray-300">
           {props.supportsUploadProgress ? `${title}: ${props.totalProgress}%` : title}
@@ -346,10 +386,7 @@ const ProgressBarComplete = ({ totalProgress, i18n }) => {
     <div class="uppy-StatusBar-content text-gray-300 w-full flex justify-center mt-4" role="status" title={i18n('complete')}>
       <div class="uppy-StatusBar-status">
         <div class="uppy-StatusBar-statusPrimary text-gray-300">
-          <svg aria-hidden="true" focusable="false" class="uppy-StatusBar-statusIndicator uppy-c-icon" width="15" height="11" viewBox="0 0 15 11">
-            <path d="M.414 5.843L1.627 4.63l3.472 3.472L13.202 0l1.212 1.213L5.1 10.528z" />
-          </svg>
-          {i18n('complete')}
+          <span>Complete!</span>
         </div>
       </div>
     </div>

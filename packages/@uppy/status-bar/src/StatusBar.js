@@ -130,6 +130,7 @@ module.exports = (props) => {
         ? "h-24 opacity-100 m-6"
         : "h-0 opacity-0 m-0"
       }
+      ${(props.isUploadStarted) ? 'my-20' : ''}
     `} aria-hidden={false}> {/** isHidden  */}
       <div class={
         `w-1/2
@@ -263,7 +264,8 @@ const PauseResumeButton = (props) => {
 
 const LoadingSpinner = () => {
   return (
-    <svg class="uppy-StatusBar-spinner" aria-hidden="true" focusable="false" width="14" height="14">
+
+    <svg style={{'fill': 'white'}} class="uppy-StatusBar-spinner animate-spin my-0 mx-auto mb-5" aria-hidden="true" focusable="false" width="24" height="24">
       <path d="M13.983 6.547c-.12-2.509-1.64-4.893-3.939-5.936-2.48-1.127-5.488-.656-7.556 1.094C.524 3.367-.398 6.048.162 8.562c.556 2.495 2.46 4.52 4.94 5.183 2.932.784 5.61-.602 7.256-3.015-1.493 1.993-3.745 3.309-6.298 2.868-2.514-.434-4.578-2.349-5.153-4.84a6.226 6.226 0 0 1 2.98-6.778C6.34.586 9.74 1.1 11.373 3.493c.407.596.693 1.282.842 1.988.127.598.073 1.197.161 1.794.078.525.543 1.257 1.15.864.525-.341.49-1.05.456-1.592-.007-.15.02.3 0 0" fill-rule="evenodd" />
     </svg>
   )
@@ -358,6 +360,7 @@ const UploadNewlyAddedFiles = (props) => {
 const ThrottledProgressDetails = throttle(ProgressDetails, 500, { leading: true, trailing: true })
 
 const ProgressBarUploading = (props) => {
+
   if (!props.isUploadStarted || props.isAllComplete) {
     return null
   }
@@ -381,12 +384,18 @@ const ProgressBarUploading = (props) => {
   )
 }
 
-const ProgressBarComplete = ({ totalProgress, i18n }) => {
+const ProgressBarComplete = ({ totalProgress, i18n, files }) => {
+  const fileType = Object.values(files)[0].meta.assetType;
   return (
     <div class="uppy-StatusBar-content text-gray-300 w-full flex justify-center mt-4" role="status" title={i18n('complete')}>
       <div class="uppy-StatusBar-status">
         <div class="uppy-StatusBar-statusPrimary text-gray-300">
-          <span>Complete!</span>
+          <LoadingSpinner />
+          {
+            fileType === 'videos'
+              ? <p>Upload complete, transcoding will start now <span class='animate-first-dot'>.</span><span class='animate-second-dot'>.</span><span class='animate-third-dot'>.</span></p>
+              : <p>Upload complete, please wait <span class='animate-first-dot'>.</span><span class='animate-second-dot'>.</span><span class='animate-third-dot'>.</span></p>
+          }
         </div>
       </div>
     </div>

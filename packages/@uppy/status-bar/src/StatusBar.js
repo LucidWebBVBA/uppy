@@ -122,7 +122,6 @@ module.exports = (props) => {
     'transition-all',
     'duration-300'
   )
-
   return (
     <div class={`
       ${statusBarClassNames}
@@ -141,7 +140,11 @@ module.exports = (props) => {
         border-primary
         rounded-full
         overflow-hidden
-        ${props.isUploadStarted ? 'opacity-100': 'opacity-0'}`
+        ${props.isUploadStarted ? 'opacity-100' : 'opacity-0'}
+        ${props.isAllComplete
+          ? 'h-0 border-none'
+          : ''}`
+
       }>
         <div
           class={`
@@ -151,10 +154,13 @@ module.exports = (props) => {
             transition-all
             duration-300
             rounded-full
-            ${(props.isUploadStarted || props.isAllComplete)
+            ${(props.isUploadStarted)
               ? "h-4 opacity-100"
               : "h-0 opacity-0"
             }
+            ${props.isAllComplete
+              ? 'h-0'
+              : ''}
           `}
           style={{ width: width + '%', display: 'block' }}
           role="progressbar"
@@ -265,8 +271,24 @@ const PauseResumeButton = (props) => {
 const LoadingSpinner = () => {
   return (
 
-    <svg style={{'fill': 'white'}} class="uppy-StatusBar-spinner animate-spin my-0 mx-auto mb-5" aria-hidden="true" focusable="false" width="24" height="24">
-      <path d="M13.983 6.547c-.12-2.509-1.64-4.893-3.939-5.936-2.48-1.127-5.488-.656-7.556 1.094C.524 3.367-.398 6.048.162 8.562c.556 2.495 2.46 4.52 4.94 5.183 2.932.784 5.61-.602 7.256-3.015-1.493 1.993-3.745 3.309-6.298 2.868-2.514-.434-4.578-2.349-5.153-4.84a6.226 6.226 0 0 1 2.98-6.778C6.34.586 9.74 1.1 11.373 3.493c.407.596.693 1.282.842 1.988.127.598.073 1.197.161 1.794.078.525.543 1.257 1.15.864.525-.341.49-1.05.456-1.592-.007-.15.02.3 0 0" fill-rule="evenodd" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+      <defs>
+        <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+          <stop stop-color="#a4a4a4" stop-opacity="0" offset="0%" />
+          <stop stop-color="#a4a4a4" stop-opacity=".631" offset="63.146%" />
+          <stop stop-color="#a4a4a4" offset="100%" />
+        </linearGradient>
+      </defs>
+      <g fill="none" fill-rule="evenodd">
+        <g transform="translate(1 1)">
+          <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="url(#a)" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite" />
+          </path>
+          <circle fill="#a4a4a4" cx="36" cy="18" r="1">
+            <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite" />
+          </circle>
+        </g>
+      </g>
     </svg>
   )
 }
@@ -384,13 +406,28 @@ const ProgressBarUploading = (props) => {
   )
 }
 
-const ProgressBarComplete = ({ totalProgress, i18n, files }) => {
+const ProgressBarComplete = ({ totalProgress, i18n, files, isAllComplete }) => {
   const fileType = Object.values(files)[0].meta.assetType;
   return (
-    <div class="uppy-StatusBar-content text-gray-300 w-full flex justify-center mt-4" role="status" title={i18n('complete')}>
+    <div
+      class={`
+        uppy-StatusBar-content
+        text-gray-300
+        w-full
+        flex
+        justify-center
+        mt-4
+        ${isAllComplete
+          ? 'transform -translate-y-10'
+          : ''}`}
+      role="status"
+      title={i18n('complete')}
+    >
       <div class="uppy-StatusBar-status">
         <div class="uppy-StatusBar-statusPrimary text-gray-300">
-          <LoadingSpinner />
+          <div class="flex justify-center mt-5 mb-10">
+            <LoadingSpinner />
+          </div>
           {
             fileType === 'videos'
               ? <p>Upload complete, transcoding will start now <span class='animate-first-dot'>.</span><span class='animate-second-dot'>.</span><span class='animate-third-dot'>.</span></p>

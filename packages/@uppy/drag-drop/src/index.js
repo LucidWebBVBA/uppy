@@ -290,7 +290,6 @@ module.exports = class DragDrop extends Plugin {
       </div>
     )
   }
-
   render(state) {
     const dragDropClass = `uppy-Root
       uppy-u-reset
@@ -302,6 +301,7 @@ module.exports = class DragDrop extends Plugin {
       ${this.getPluginState().isDraggingOver ? 'uppy-DragDrop--isDraggingOver' : ''}
       w-full
       py-6
+      ${this.getPluginState().uploading ? 'hidden' : ''}
     `
 
     const dragDropStyle = {
@@ -331,7 +331,7 @@ module.exports = class DragDrop extends Plugin {
 
   install() {
     this.setPluginState({
-      isDraggingOver: false, fileAdded: false
+      isDraggingOver: false, fileAdded: false, uploading: false
     })
     const target = this.opts.target
     if (target) {

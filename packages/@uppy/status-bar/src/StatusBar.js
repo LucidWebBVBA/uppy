@@ -247,7 +247,6 @@ const CancelBtn = (props) => {
       onclick={props.cancelAll}
       data-uppy-super-focusable
     >
-      {console.log('CANCEL PROPS', props)}
       {
         props.uploadState === 'error'
           ? 'CANCEL'

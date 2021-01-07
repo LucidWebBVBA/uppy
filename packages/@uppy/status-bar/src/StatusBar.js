@@ -140,6 +140,7 @@ module.exports = (props) => {
         border-primary
         rounded-full
         overflow-hidden
+        ${props.uploadState === 'error' ? 'hidden' : ''}
         ${props.isUploadStarted ? 'opacity-100' : 'opacity-0'}
         ${props.isAllComplete
           ? 'h-0 border-none'
@@ -177,6 +178,7 @@ module.exports = (props) => {
         w-full
         font-basenormal
         mt-4
+        ${props.uploadState === 'error' ? 'flex-col' : ''}
         ${props.isAllPaused ? 'transform -translate-y-3' : 'transform translate-y-0'}
         `}>
         {progressBarContent}
@@ -218,14 +220,14 @@ const RetryBtn = (props) => {
   return (
     <button
       type="button"
-      class="uppy-u-reset uppy-c-btn uppy-StatusBar-actionBtn uppy-StatusBar-actionBtn--retry"
+      class="px-4 border-primary border border-solid rounded-button uppercase text-primary uppy-u-reset uppy-c-btn uppy-StatusBar-actionBtn uppy-StatusBar-actionBtn--retry"
       aria-label={props.i18n('retryUpload')}
       onclick={props.retryAll}
       data-uppy-super-focusable
     >
-      <svg aria-hidden="true" focusable="false" class="uppy-c-icon" width="8" height="10" viewBox="0 0 8 10">
+      {/* <svg aria-hidden="true" focusable="false" class="uppy-c-icon" width="8" height="10" viewBox="0 0 8 10">
         <path d="M4 2.408a2.75 2.75 0 1 0 2.75 2.75.626.626 0 0 1 1.25.018v.023a4 4 0 1 1-4-4.041V.25a.25.25 0 0 1 .389-.208l2.299 1.533a.25.25 0 0 1 0 .416l-2.3 1.533A.25.25 0 0 1 4 3.316v-.908z" />
-      </svg>
+      </svg> */}
       {props.i18n('retry')}
     </button>
   )
@@ -235,13 +237,22 @@ const CancelBtn = (props) => {
   return (
     <button
       type="button"
-      class="uppy-u-reset uppy-StatusBar-actionCircleBtn"
+      class={`
+        ${props.uploadState === 'error' ? 'px-4 border-primary border border-solid rounded-button uppercase text-primary ml-4' : ''}
+        uppy-u-reset
+        uppy-StatusBar-actionCircleBtn
+      `}
       title={props.i18n('cancel')}
       aria-label={props.i18n('cancel')}
       onclick={props.cancelAll}
       data-uppy-super-focusable
     >
-      <span class="icon-cross text-gray-300 text-lg"></span>
+      {console.log('CANCEL PROPS', props)}
+      {
+        props.uploadState === 'error'
+          ? 'CANCEL'
+          : <span class="icon-cross text-gray-300 text-lg"></span>
+      }
     </button>
   )
 }
@@ -448,22 +459,24 @@ const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
   return (
     <div class="uppy-StatusBar-content text-gray-300" role="alert" title={i18n('uploadFailed')}>
       <div class="uppy-StatusBar-status">
-        <div class="uppy-StatusBar-statusPrimary text-gray-300">
-          <svg aria-hidden="true" focusable="false" class="uppy-StatusBar-statusIndicator uppy-c-icon" width="11" height="11" viewBox="0 0 11 11">
+        <div class="uppy-StatusBar-statusPrimary text-gray-300 flex items-center uppercase text-xl">
+
+          {/* <svg aria-hidden="true" focusable="false" class="uppy-StatusBar-statusIndicator uppy-c-icon" width="11" height="11" viewBox="0 0 11 11">
             <path d="M4.278 5.5L0 1.222 1.222 0 5.5 4.278 9.778 0 11 1.222 6.722 5.5 11 9.778 9.778 11 5.5 6.722 1.222 11 0 9.778z" />
-          </svg>
-          {i18n('uploadFailed')}
+          </svg> */}
+
+          {i18n('uploadFailed')} <span class="icon-cross text-2xl text-danger ml-2"></span>
         </div>
       </div>
       <span
-        class="uppy-StatusBar-details"
+        class="uppy-StatusBar-details my-4"
         aria-label={error}
         data-microtip-position="top-right"
         data-microtip-size="medium"
         role="tooltip"
         onclick={displayErrorAlert}
       >
-        ?
+        {error}
       </span>
     </div>
   )

@@ -183,7 +183,7 @@ module.exports = (props) => {
         `}>
         {progressBarContent}
         {showUploadBtn ? <UploadBtn {...props} uploadState={uploadState} /> : null}
-        <div class="bg-gray-800 flex text-gray-300">
+        <div class={`bg-gray-800 flex text-gray-300 ${props.uploadState === 'error' ? 'mt-4' : ''}`}>
           {showRetryBtn ? <RetryBtn {...props} /> : null}
           {showPauseResumeBtn ? <PauseResumeButton {...props} /> : null}
           {showCancelBtn ? <CancelBtn {...props} /> : null}
@@ -468,7 +468,7 @@ const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
         </div>
       </div>
       <span
-        class="uppy-StatusBar-details my-4"
+        class="uppy-StatusBar-details"
         aria-label={error}
         data-microtip-position="top-right"
         data-microtip-size="medium"

@@ -89,7 +89,6 @@ module.exports = class AwsS3Multipart extends Plugin {
     return this.client.post('s3/multipart', {
       filename: file.name,
       type: file.type,
-      size: file.data.size,
       metadata
     }).then(assertServerError)
   }

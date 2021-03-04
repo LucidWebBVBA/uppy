@@ -468,13 +468,13 @@ const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
         </div>
       </div>
       <div
-        class="uppy-StatusBar-details overflow-y-auto"
+        class="uppy-StatusBar-details overflow-y-auto overflow-x-hidden"
         aria-label={error}
         data-microtip-position="top-right"
         data-microtip-size="medium"
         role="tooltip"
         // onclick={displayErrorAlert}
-        style={{maxHeight: '50px', maxWidth: '100%'}}
+        style={{maxHeight: '50px', maxWidth: '100%', wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word'}}
       >
         {error}
       </div>

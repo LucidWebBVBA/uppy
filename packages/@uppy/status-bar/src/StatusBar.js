@@ -456,7 +456,7 @@ const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
   }
 
   return (
-    <div class="uppy-StatusBar-content text-gray-300" role="alert" title={i18n('uploadFailed')}>
+    <div class="uppy-StatusBar-content text-gray-300 w-full max-w-full" role="alert" title={i18n('uploadFailed')}>
       <div class="uppy-StatusBar-status">
         <div class="uppy-StatusBar-statusPrimary text-gray-300 flex items-center uppercase text-xl">
 
@@ -467,16 +467,17 @@ const ProgressBarError = ({ error, retryAll, hideRetryButton, i18n }) => {
           {i18n('uploadFailed')} <span class="icon-cross text-2xl text-danger ml-2"></span>
         </div>
       </div>
-      <span
-        class="uppy-StatusBar-details"
+      <div
+        class="uppy-StatusBar-details overflow-y-auto"
         aria-label={error}
         data-microtip-position="top-right"
         data-microtip-size="medium"
         role="tooltip"
-        onclick={displayErrorAlert}
+        // onclick={displayErrorAlert}
+        style={{maxHeight: '50px', maxWidth: '100%'}}
       >
         {error}
-      </span>
+      </div>
     </div>
   )
 }
